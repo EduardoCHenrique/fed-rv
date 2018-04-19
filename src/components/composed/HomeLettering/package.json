@@ -1,0 +1,5 @@
+{
+  "name": "HomeLettering",
+  "private": true,
+  "main": "./HomeLettering.js"
+}

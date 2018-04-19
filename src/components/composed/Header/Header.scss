@@ -1,0 +1,13 @@
+.header {
+  font-family: 'Heebo', 'Sans-serif';
+}
+
+.header__menu {
+  display: flex;
+}
+
+.header__menu__item {
+  color: white;
+  font-size: 1.5rem;
+  padding: 3rem;
+}

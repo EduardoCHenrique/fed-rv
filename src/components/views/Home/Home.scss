@@ -1,0 +1,22 @@
+.home {
+  width: 100%;
+}
+
+.home__section {
+  background-color: white;
+  box-shadow: 5px 3px 33px -10px #888888;
+  display: flex;
+  margin: 0 auto;
+  width: 84rem;
+  height: 50rem;
+  top: -15rem;
+  position: relative;
+}
+
+.home__check-in-section {
+  flex: 1 1 100%;
+}
+
+.home__calendar-section {
+  flex: 1 1 100%;
+}

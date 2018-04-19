@@ -1,0 +1,27 @@
+.home-lettering {
+  align-items: center;
+  color: white;
+  display: flex;
+  font-family: 'Montserrat';
+  flex-flow: column;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-top: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.home-lettering__crow {
+  height: 4.5rem;
+  margin-bottom: 1.8rem;
+  width: 5.5rem;
+}
+
+.home-lettering__main-text {
+  border-bottom: .2rem solid white;
+  border-top: .2rem solid white;
+  font-size: 7.6rem;
+  letter-spacing: 1rem;
+  margin: 1rem 0;
+  padding: 1.1rem 0;
+}

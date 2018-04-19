@@ -5,11 +5,13 @@ const path = require('path')
 module.exports = {
   resolve: {
     alias: {
+      assets: path.resolve(__dirname, 'src/assets/'),
       components: path.resolve(__dirname, 'src/components/')
     }
   },
   module: {
     rules: [
+      { test: /\.(jpe?g|png|gif)$/i, loader: 'url-loader' },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -29,7 +31,7 @@ module.exports = {
       },
 
       {
-        test: /\.scss$/,
+        test: /\.scss|.css$/,
         use: [
           { loader: 'style-loader' },
           { loader: 'css-loader' },
