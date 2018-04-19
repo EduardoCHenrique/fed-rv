@@ -6,17 +6,54 @@
   background-color: white;
   box-shadow: 5px 3px 33px -10px #888888;
   display: flex;
+  flex-wrap: wrap;
   margin: 0 auto;
   width: 84rem;
   height: 50rem;
   top: -15rem;
   position: relative;
+  &:after {
+    background-color: white;
+    bottom: -2rem;
+    content: '';
+    height: 3rem;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+  }
 }
 
-.home__check-in-section {
-  flex: 1 1 100%;
+.home__check-in__section, .home__calendar-section {
+  flex: 1 1 50%;
+  font-size: 2.2rem;
+  text-align: center;
 }
 
-.home__calendar-section {
+.home__calendar-section__title {
   flex: 1 1 100%;
+  font-size: 2.2rem;
+  font-weight: 300;
+  text-align: center;
+  margin: 6rem 0;
+}
+
+
+// .home__check-in__wrapper {
+
+// }
+
+.home__check-in__date__wrapper {
+  margin-bottom: 4rem;
+}
+
+.home__check-in__date__title {
+  font-family: 'Montserrat';
+  font-size: 2.2rem;
+  text-transform: uppercase;
+}
+
+.home__check-in__date {
+  font-size: 1.6rem;
+  color: #B5B5B5;
 }
