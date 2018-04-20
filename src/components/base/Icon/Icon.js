@@ -10,11 +10,9 @@ const Icon = (props) => {
   try {
     require(`../../../assets/svgs/${name}.svg`)
     return (
-      <i className='icon__wrapper'>
-        <svg className={classNames('icon__svg', className)} {...rest}>
-          <use xlinkHref={`#${name}`} />
-        </svg>
-      </i>
+      <svg className={classNames('icon__svg', className)} {...rest}>
+        <use xlinkHref={`#${name}`} />
+      </svg>
     )
   } catch (e) {
     return null

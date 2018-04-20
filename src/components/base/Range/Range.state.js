@@ -30,7 +30,11 @@ export default class RangeState extends Component {
 
   render () {
     return (
-      <Range maxValue={VALUES.MAX} minValue={VALUES.MIN} value={this.state.value} onChange={this.handleChange} />
+      <Range
+        maxValue={VALUES.MAX}
+        minValue={VALUES.MIN}
+        value={this.state.value}
+        onChange={this.handleChange} />
     )
   }
 }

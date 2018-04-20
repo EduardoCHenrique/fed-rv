@@ -13,7 +13,7 @@ const HotelsSection = ({className, hotels, ...rest}) => {
     <section className={classes}>
       <aside className='hotels__filter'>
         <Range />
-        <StarsFilter />
+        <StarsFilter handleRate={() => {}} />
       </aside>
       <HotelsList hotels={hotels} />
     </section>

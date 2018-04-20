@@ -1,0 +1,16 @@
+@import 'assets/style/global-variables.scss';
+
+.stars-filter__title {
+  color: var(--light-text-color);
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+}
+
+.stars-filter__list__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: .6rem;
+}
+.stars-filter__list__item__check {
+  margin-right: .6rem;
+}

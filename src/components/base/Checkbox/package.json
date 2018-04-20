@@ -1,0 +1,5 @@
+{
+  "name": "Checkbox",
+  "private": true,
+  "main": "./Checkbox.js"
+}
