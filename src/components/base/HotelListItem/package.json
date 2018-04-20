@@ -1,0 +1,5 @@
+{
+  "name": "HotelListItem",
+  "private": true,
+  "main": "./HotelListItem.js"
+}

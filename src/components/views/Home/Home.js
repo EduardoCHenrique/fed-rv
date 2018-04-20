@@ -8,11 +8,12 @@ import Button from 'components/base/Button'
 import Header from 'components/composed/Header'
 import Footer from 'components/composed/Footer'
 import HomeLettering from 'components/composed/HomeLettering'
-const CalendarWithRange = withRange(Calendar);
+import HotelsSection from 'components/composed/HotelsSection'
 
 import 'react-infinite-calendar/styles.css'
 import './Home.scss'
 
+const CalendarWithRange = withRange(Calendar)
 const secondaryColor = `${window.getComputedStyle(document.documentElement).getPropertyValue('--secondary-color')}`
 const textColor = `${window.getComputedStyle(document.documentElement).getPropertyValue('--light-text-color')}`
 const calendarTheme = {
@@ -32,7 +33,7 @@ const calendarTheme = {
   weekdayColor: secondaryColor
 }
 
-const Home = ({onChangeCheckin, checkInDate, checkOutDate}) => {
+const Home = ({onChangeCheckin, checkInDate, checkOutDate, onSearchHotels, hotels}) => {
   return (
     <main className='home'>
       <Hero>
@@ -50,11 +51,13 @@ const Home = ({onChangeCheckin, checkInDate, checkOutDate}) => {
             <p className='home__check-in__date__title'>Check out</p>
             <span className='home__check-in__date'>{checkOutDate.format('dddd, mm, Y')}</span>
           </div>
-          <Button className='home__check-in__searchInput'>Search hotels</Button>
+          <Button className='home__check-in__searchInput' onClick={onSearchHotels}>Search hotels</Button>
         </div>
         <div className='home__calendar-section'>
           <InfiniteCalendar
             Component={CalendarWithRange}
+            width={350}
+            height={350}
             theme={calendarTheme}
             onSelect={onChangeCheckin}
             selected={{
@@ -65,14 +68,15 @@ const Home = ({onChangeCheckin, checkInDate, checkOutDate}) => {
           />
         </div>
       </section>
+      <HotelsSection hotels={hotels} />
       <Footer />
     </main>
   )
 }
 
-// Home.propTypes = {
-//   checkInDate: PropTypes.Date,
-//   checkOutDate: PropTypes.Date
-// }
+Home.propTypes = {
+  checkInDate: PropTypes.object,
+  checkOutDate: PropTypes.object
+}
 
 export default Home

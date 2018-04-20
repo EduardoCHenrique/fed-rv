@@ -4,11 +4,9 @@ import axios from 'axios'
 // }
 
 const HotelsRepository = {
-  getAllHotels (search) {
+  getAllHotelsByRange (start, end) {
     return axios.get('https://rif2ibxnjk.execute-api.sa-east-1.amazonaws.com/prod/hotels')
-      .then(response => {
-        console.log('response', response)
-      })
+      .then(response => response.data)
   }
   // getAllHotels(search) {
   //   return axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${search}&limit=4`)

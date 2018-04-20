@@ -1,11 +1,13 @@
 import React, {Component} from 'react'
 import moment from 'moment'
+import HotelsRepository from 'infra/repositories/HotelsRepository'
 
 import Home from './Home.js'
 export default class HomeState extends Component {
   constructor (props) {
     super(props)
     this.handleChangeCheckin = this.handleChangeCheckin.bind(this)
+    this.handleSearchHotels = this.handleSearchHotels.bind(this)
     this.state = {
       checkInDate: moment(),
       checkOutDate: moment()
@@ -13,10 +15,15 @@ export default class HomeState extends Component {
   }
 
   handleChangeCheckin ({start, end}) {
-    console.log('handleChangeCheckin', start)
     this.setState({
       checkInDate: moment(start),
       checkOutDate: moment(end)
+    })
+  }
+
+  handleSearchHotels (start, end) {
+    HotelsRepository.getAllHotelsByRange(start, end).then(({data}) => {
+      this.setState({hotels: data})
     })
   }
 
@@ -24,7 +31,9 @@ export default class HomeState extends Component {
     return (
       <Home
         onChangeCheckin={this.handleChangeCheckin}
-        {...this.state} />
+        onSearchHotels={this.handleSearchHotels}
+        {...this.state}
+      />
     )
   }
 }
