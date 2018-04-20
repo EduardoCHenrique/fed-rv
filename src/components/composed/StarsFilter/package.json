@@ -1,0 +1,5 @@
+{
+  "name": "StarsFilter",
+  "private": true,
+  "main": "./StarsFilter.js" 
+}

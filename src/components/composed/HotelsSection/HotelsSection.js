@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import HotelsList from 'components/composed/HotelsList'
 import Range from 'components/base/Range'
+import StarsFilter from 'components/composed/StarsFilter'
 
 import './HotelsSection.scss'
 
@@ -12,6 +13,7 @@ const HotelsSection = ({className, hotels, ...rest}) => {
     <section className={classes}>
       <aside className='hotels__filter'>
         <Range />
+        <StarsFilter />
       </aside>
       <HotelsList hotels={hotels} />
     </section>
