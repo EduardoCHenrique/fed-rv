@@ -1,0 +1,54 @@
+@import 'assets/style/global-variables.scss';
+
+.input-range__track {
+  background: #eeeeee;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  display: block;
+  height: 0.3rem;
+  position: relative;
+  transition: left 0.3s ease-out, width 0.3s ease-out;
+  width: 200px;
+}
+
+.input-range__slider {
+  appearance: none;
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 100%;
+  cursor: pointer;
+  display: block;
+  height: 1rem;
+  margin-left: -0.5rem;
+  margin-top: -0.65rem;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  transition: box-shadow 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  width: 1rem;
+}
+
+.input-range__label--value {
+  position: absolute;
+  top: -1.8rem;
+}
+
+.input-range__label {
+  color: #aaaaaa;
+  font-family: "Helvetica Neue", san-serif;
+  font-size: 0.8rem;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  white-space: nowrap;
+}
+
+.input-range__slider-container {
+  -webkit-transition: left 0.3s ease-out;
+  transition: left 0.3s ease-out;
+}
+
+.input-range__track--active {
+  background: var(--primary-color);
+}
