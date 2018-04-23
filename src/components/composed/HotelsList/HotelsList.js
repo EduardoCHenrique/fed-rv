@@ -9,8 +9,6 @@ const renderHotel = function (hotel, index) {
 }
 
 const HotelsList = ({className, hotels, ...rest}) => {
-  console.log('render do HotelsList');
-  
   const classes = classNames('hotels-list__wrapper', className)
   return (
     <section className={classes}>

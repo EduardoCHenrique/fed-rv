@@ -7,7 +7,10 @@ module.exports = {
     alias: {
       assets: path.resolve(__dirname, 'src/assets/'),
       components: path.resolve(__dirname, 'src/components/'),
-      infra: path.resolve(__dirname, 'src/infra/')
+      infra: path.resolve(__dirname, 'src/infra/'),
+      reducers: path.resolve(__dirname, 'src/reducers'),
+      actions: path.resolve(__dirname, 'src/actions'),
+      utils: path.resolve(__dirname, 'src/utils')
     }
   },
   module: {

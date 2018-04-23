@@ -1,0 +1,5 @@
+{
+  "name": "Hotels",
+  "private": true,
+  "main": "./Hotels.js"
+}

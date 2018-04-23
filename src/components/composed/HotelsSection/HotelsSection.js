@@ -3,17 +3,19 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import HotelsList from 'components/composed/HotelsList'
 import Range from 'components/base/Range'
+import Button from 'components/base/Button'
 import StarsFilter from 'components/composed/StarsFilter'
 
 import './HotelsSection.scss'
 
-const HotelsSection = ({className, hotels, ...rest}) => {
+const HotelsSection = ({className, hotels, onChangeRangeFilter, ...rest}) => {
   const classes = classNames('hotels-section', className)
+  
   return hotels.length && (
     <section className={classes}>
       <aside className='hotels__filter'>
-        <Range />
-        <StarsFilter handleRate={() => {}} />
+        <Range value={1} />
+        <StarsFilter handleRate={onChangeRangeFilter} />
       </aside>
       <HotelsList hotels={hotels} />
     </section>

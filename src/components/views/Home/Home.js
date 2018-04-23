@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import moment from 'moment'
 
 import InfiniteCalendar, {withRange, Calendar} from 'react-infinite-calendar'
 import Hero from 'components/base/Hero'
@@ -33,7 +32,11 @@ const calendarTheme = {
   weekdayColor: secondaryColor
 }
 
-const Home = ({onChangeCheckin, checkInDate, checkOutDate, onSearchHotels, hotels}) => {
+const Home = (props) => {
+  const {onChangeCheckin, checkInDate, checkOutDate, onSearchHotels, hotels: {payload: hotels}} = props
+  console.log('hotels', hotels);
+  
+
   return (
     <main className='home'>
       <Hero>
@@ -68,7 +71,8 @@ const Home = ({onChangeCheckin, checkInDate, checkOutDate, onSearchHotels, hotel
           />
         </div>
       </section>
-      <HotelsSection hotels={hotels} />
+      
+      <HotelsSection />
       <Footer />
     </main>
   )
