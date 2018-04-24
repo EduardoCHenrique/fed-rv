@@ -20,11 +20,22 @@ export const succeed = payload => (
   }
 )
 
-export function getHotels () {
+function buildQueryParams (query) {
+  return {
+    params: {
+      minPrice: query.price.min,
+      maxPrice: query.price.max,
+      stars: query.stars
+    }
+  }
+}
+
+export function getHotels (query) {
+  const queryParams = query ? buildQueryParams(query) : {}
+
   return dispatch => {
     dispatch(request())
-
-    return axios.get('https://rif2ibxnjk.execute-api.sa-east-1.amazonaws.com/prod/hotels')
+    return axios.get('https://rif2ibxnjk.execute-api.sa-east-1.amazonaws.com/prod/hotels', queryParams)
       .then(res => res.data.data)
       .then(data => dispatch(succeed(data)))
       .catch(error => dispatch(failed(error)))

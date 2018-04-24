@@ -8,14 +8,15 @@ import StarsFilter from 'components/composed/StarsFilter'
 
 import './HotelsSection.scss'
 
-const HotelsSection = ({className, hotels, onChangeRangeFilter, ...rest}) => {
+const HotelsSection = ({className, hotels, onChangeRangeFilter, onChangeStarsFilter, onApplyFilters, ...rest}) => {
   const classes = classNames('hotels-section', className)
-  
+
   return hotels.length && (
     <section className={classes}>
       <aside className='hotels__filter'>
-        <Range value={1} />
-        <StarsFilter handleRate={onChangeRangeFilter} />
+        <Range onChange={onChangeRangeFilter} />
+        <StarsFilter handleSelect={onChangeStarsFilter} />
+        <Button onClick={onApplyFilters}>Apply</Button>
       </aside>
       <HotelsList hotels={hotels} />
     </section>

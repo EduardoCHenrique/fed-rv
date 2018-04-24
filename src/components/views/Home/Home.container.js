@@ -5,7 +5,6 @@ import HomeState from './Home.state'
 import { getHotels } from 'actions/Hotels'
 
 const mapStateToProps = state => {
-  console.log('state do hotels', state)
   const { hotels } = state
   return { hotels }
 }

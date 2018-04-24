@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 
 import Range from './Range.js'
 
-const VALUES = {
+export const VALUES = {
   MIN: 100,
   MAX: 600
 }
@@ -20,16 +20,9 @@ export default class RangeState extends Component {
   }
 
   handleChange (value) {
-    console.log('value', value);
     this.setState({
-      value: {
-        min: value.min,
-        max: value.max
-      }
-    }, this.props.handleChange({
-      min: value.min,
-      max: value.max
-    }))
+      value: { min: value.min, max: value.max }
+    }, this.props.onChange({ min: value.min, max: value.max }))
   }
 
   render () {

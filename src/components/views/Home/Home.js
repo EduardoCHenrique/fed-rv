@@ -34,8 +34,6 @@ const calendarTheme = {
 
 const Home = (props) => {
   const {onChangeCheckin, checkInDate, checkOutDate, onSearchHotels, hotels: {payload: hotels}} = props
-  console.log('hotels', hotels);
-  
 
   return (
     <main className='home'>
@@ -54,7 +52,7 @@ const Home = (props) => {
             <p className='home__check-in__date__title'>Check out</p>
             <span className='home__check-in__date'>{checkOutDate.format('dddd, mm, Y')}</span>
           </div>
-          <Button className='home__check-in__searchInput' onClick={onSearchHotels}>Search hotels</Button>
+          <Button type='button' className='home__check-in__searchInput' onClick={onSearchHotels}>Search hotels</Button>
         </div>
         <div className='home__calendar-section'>
           <InfiniteCalendar

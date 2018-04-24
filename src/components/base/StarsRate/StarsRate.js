@@ -5,12 +5,12 @@ import classNames from 'classnames'
 import Icon from 'components/base/Icon'
 import './StarsRate.scss'
 
-const Star = ({index, active, handleClick}) => {
+const Star = ({index, active}) => {
   const name = active ? 'star-filled' : 'star-outline'
-  return <Icon className='stars-rate__star' name={name} onClick={handleClick} />
+  return <Icon className='stars-rate__star' name={name} />
 }
 
-const renderStars = ({maxRate, activeLength, handleClick, onRate}) => {
+const renderStars = ({maxRate, activeLength}) => {
   let i = 1
   let stars = []
 
@@ -19,8 +19,7 @@ const renderStars = ({maxRate, activeLength, handleClick, onRate}) => {
       <Star
         key={i}
         index={i}
-        active={i <= activeLength}
-        handleClick={onRate} />
+        active={i <= activeLength} />
     )
     i++
   }

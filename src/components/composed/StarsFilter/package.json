@@ -1,5 +1,5 @@
 {
   "name": "StarsFilter",
   "private": true,
-  "main": "./StarsFilter.js" 
+  "main": "./StarsFilter.state.js" 
 }
