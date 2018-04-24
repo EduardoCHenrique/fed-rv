@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import HotelsSection from './HotelsSection.js'
 import { VALUES } from 'components/base/Range'
 
@@ -13,8 +14,16 @@ export default class HotelsSectionState extends Component {
       price: {
         min: VALUES.MIN,
         max: VALUES.MAX
-      }
+      },
+      hotels: props.hotels.payload
     }
+  }
+
+  componentWillReceiveProps (nextProps) {
+    const {hotels: {payload}} = nextProps
+    this.setState({
+      hotels: payload.length ? payload : this.props.hotels.payload
+    })
   }
 
   onChangeRangeFilter (value) {
@@ -31,7 +40,6 @@ export default class HotelsSectionState extends Component {
 
   onApplyFilters () {
     const {stars, price} = this.state
-
     this.props.getHotels({ stars: stars.join(','), price })
   }
 
@@ -40,8 +48,14 @@ export default class HotelsSectionState extends Component {
       <HotelsSection
         onChangeRangeFilter={this.onChangeRangeFilter}
         onChangeStarsFilter={this.onChangeStarsFilter}
-        hotels={this.props.hotels.payload}
+        hotels={this.state.hotels}
+        loading={this.props.hotels.fetching}
         onApplyFilters={this.onApplyFilters} />
     )
   }
-} 
+}
+
+HotelsSectionState.propTypes = {
+  getHotels: PropTypes.func,
+  hotels: PropTypes.object
+}

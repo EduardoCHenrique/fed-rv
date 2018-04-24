@@ -27,4 +27,4 @@ export default class StarsFilterState extends Component {
       <StarsFilter stars={this.state.stars} handleSelect={this.handleSelect} />
     )
   }
-} 
+}

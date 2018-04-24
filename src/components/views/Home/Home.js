@@ -33,7 +33,7 @@ const calendarTheme = {
 }
 
 const Home = (props) => {
-  const {onChangeCheckin, checkInDate, checkOutDate, onSearchHotels, hotels: {payload: hotels}} = props
+  const {onChangeCheckin, checkInDate, checkOutDate, onSearchHotels} = props
 
   return (
     <main className='home'>
@@ -61,15 +61,10 @@ const Home = (props) => {
             height={350}
             theme={calendarTheme}
             onSelect={onChangeCheckin}
-            selected={{
-              start: checkInDate,
-              end: checkOutDate
-            }}
-            locale={{headerFormat: 'MMM Do'}}
-          />
+            selected={{ start: checkInDate, end: checkOutDate }}
+            locale={{headerFormat: 'MMM Do'}} />
         </div>
       </section>
-      
       <HotelsSection />
       <Footer />
     </main>

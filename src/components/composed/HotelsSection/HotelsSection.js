@@ -10,13 +10,12 @@ import './HotelsSection.scss'
 
 const HotelsSection = ({className, hotels, onChangeRangeFilter, onChangeStarsFilter, onApplyFilters, ...rest}) => {
   const classes = classNames('hotels-section', className)
-
   return hotels.length && (
     <section className={classes}>
       <aside className='hotels__filter'>
         <Range onChange={onChangeRangeFilter} />
         <StarsFilter handleSelect={onChangeStarsFilter} />
-        <Button onClick={onApplyFilters}>Apply</Button>
+        <Button onClick={onApplyFilters} type='button'>Apply</Button>
       </aside>
       <HotelsList hotels={hotels} />
     </section>
